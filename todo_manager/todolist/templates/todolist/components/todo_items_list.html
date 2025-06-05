@@ -1,0 +1,14 @@
+<ul>
+    {% for todo in object_list %}
+        <li>
+            <a href="{% url 'todolist:detail' pk=todo.id %}">
+                {{ todo.title }}
+                {% if todo.done %}
+                    ✅
+                {% else %}
+                    ❌
+                {% endif %}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
